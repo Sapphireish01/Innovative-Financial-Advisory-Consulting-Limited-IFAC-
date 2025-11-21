@@ -68,6 +68,11 @@ export default function HomeHero() {
     return () => clearTimeout(timeout);
   }, [charIndex, isDeleting, wordIndex]);
 
+  const handleScroll = (id) => {
+    const section = document.getElementById(id);
+    if (section) section.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section className="relative w-full h-[550px] md:h-[650px] overflow-hidden">
 
@@ -99,7 +104,7 @@ export default function HomeHero() {
           <div className="border-t border-white/70 w-62 md:w-98"></div>
         </div>
 
-        <button className="mt-4 bg-white text-[#042153] px-6 py-2 rounded-full font-semibold shadow-md hover:bg-[#e6e6e6] block">
+        <button onClick={() => handleScroll("contact")} className="mt-4 bg-white text-[#042153] px-6 py-2 rounded-full font-semibold shadow-md hover:bg-[#e6e6e6] block">
           Get in Touch <span> <IoMdArrowForward className="inline-flex" /></span>
         </button>
       </div>
