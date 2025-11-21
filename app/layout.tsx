@@ -98,6 +98,12 @@
 
 import type { Metadata } from "next";
 import "./globals.css";
+import { Raleway } from "next/font/google";
+
+const raleway = Raleway({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.innovativefinancialadvisory.com"),
@@ -172,7 +178,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="raleway.className">
       <body className="antialiased">{children}</body>
     </html>
   );
